@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
     android:orientation="vertical"
+    android:background="#2196F3"
     tools:context=".login.LoginActivity">
 
     <ImageView
@@ -13,6 +13,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+
          />
 
     <TextView
@@ -23,29 +24,35 @@
         android:gravity="center"
         android:text="@string/movie"
         android:textSize="24sp"
+        android:textColor="@android:color/white"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edtEmail"
-
+        android:background="@drawable/bg_edittext"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:hint="@string/email"
-        android:textColorHint="@android:color/white" />
+        android:fontFamily="casual"
+        android:textColorHint="#676F7F"
+        android:padding="10dp"/>
 
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="casual"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textColorHint="@android:color/white" />
+        android:background="@drawable/bg_edittext"
+        android:textColorHint="#676F7F"
+        android:padding="10dp"/>
 
     <Button
         android:id="@+id/btnLogin"
@@ -55,7 +62,23 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:text="login"
-        android:textColor="#2196F3" />
+        android:fontFamily="casual"
+        android:background="@drawable/bg_button"
+        android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:id="@+id/linkRegister"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textColor="#ffffff"
+            android:text="Belum punya akun ? daftar sekarang"/>
+
+
+
 
 
 </LinearLayout>
