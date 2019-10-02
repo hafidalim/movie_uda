@@ -19,7 +19,7 @@ class LoginPresenter(val loginView: LoginView) {
             loginView.onErrorLogin("Tidak boleh kosong")
         }
 
-        NetworkConfig.service()
+        NetworkConfig.serviceUser()
             .login(email, password)
             .enqueue(object : Callback<ResultLogin>{
                 override fun onFailure(call: Call<ResultLogin>, t: Throwable) {

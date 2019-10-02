@@ -26,5 +26,14 @@ object NetworkConfig {
             .build()
     }
 
-    fun service() = getRetrofit().create(MovieService::class.java)
+    fun getMovie() : Retrofit{
+        return Retrofit.Builder()
+            .baseUrl("https://api.themoviedb.org/3/discover/")
+            .client(getInterceptor())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    fun serviceUser() = getRetrofit().create(MovieService::class.java)
+    fun serviceMovie() = getMovie().create(MovieService::class.java)
 }

@@ -8,7 +8,7 @@ import retrofit2.Response
 
 class RegisterPresenter(val registerView: RegisterView) {
     fun register(nama: String, email: String, hp: String, password: String) {
-        NetworkConfig.service()
+        NetworkConfig.serviceUser()
             .register(nama, email, hp, password)
             .enqueue(object : Callback<ResultRegister> {
                 override fun onFailure(call: Call<ResultRegister>, t: Throwable) {

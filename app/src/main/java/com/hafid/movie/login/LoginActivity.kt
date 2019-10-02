@@ -2,7 +2,6 @@ package com.hafid.movie.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import com.hafid.movie.MainActivity
 import com.hafid.movie.R
 import com.hafid.movie.login.data.User
@@ -13,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
 
 class LoginActivity : AppCompatActivity(), LoginView {

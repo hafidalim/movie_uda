@@ -2,11 +2,10 @@ package com.hafid.movie.network
 
 
 import com.hafid.movie.login.data.ResultLogin
+import com.hafid.movie.movie.data.ResultMovie
 import com.hafid.movie.register.data.ResultRegister
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface MovieService {
 
@@ -29,5 +28,13 @@ interface MovieService {
         @Field("password") password : String
 
     ) : Call<ResultRegister>
+
+    //movie
+    @GET("movie?")
+    fun getMovie(
+        @Query("api_key") apiKey : String,
+        @Query("language") language : String
+
+    ) : Call<ResultMovie>
 
 }
