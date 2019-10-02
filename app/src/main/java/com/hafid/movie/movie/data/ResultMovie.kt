@@ -4,7 +4,7 @@ package com.hafid.movie.movie.data
 import com.google.gson.annotations.SerializedName
 
 
-data class ResultMovie(
+class ResultMovie(
 
 	@field:SerializedName("page")
 	val page: Int? = null,

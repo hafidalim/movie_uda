@@ -39,6 +39,7 @@ class MovieFragment : Fragment(), MovieView {
 
     override fun onSuccessMovie(data: List<ResultsItem?>?) {
         listMovie.adapter = MovieAdapter(data)
+        progressBar.visibility = View.GONE
     }
 
     override fun onErrorMovie(msg: String?) {

@@ -9,4 +9,11 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="overview">Overview</string>
+    <string name="detail">Detail Movie</string>
+    <string name="genres">Genre</string>
+    <string name="released_date">Release</string>
+    <string name="runtime">Runtime</string>
+    <string name="productions">Production</string>
+    <string name="episode">Episode</string>
 </resources>
