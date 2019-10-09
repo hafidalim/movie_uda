@@ -10,8 +10,6 @@ import com.hafid.movie.DetailActivity
 import com.hafid.movie.R
 import com.hafid.movie.movie.data.ResultsItem
 import kotlinx.android.synthetic.main.item_movie.view.*
-import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.startActivity
 
 class MovieAdapter(var data: List<ResultsItem?>?) : RecyclerView.Adapter<MovieAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {

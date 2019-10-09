@@ -8,6 +8,7 @@ import com.hafid.movie.login.data.User
 import com.hafid.movie.login.presenter.LoginPresenter
 import com.hafid.movie.login.presenter.LoginView
 import com.hafid.movie.register.RegisterActivity
+import com.hafid.movie.utils.SessionManager
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -33,6 +34,13 @@ class LoginActivity : AppCompatActivity(), LoginView {
     }
 
     override fun onSuccessLogin(user: User?, msg: String?) {
+        val sesi = SessionManager(this)
+        sesi.cerateLoginSession("1")
+        sesi.email = user?.userEmail
+        sesi.nama = user?.userNama
+        sesi.phone  = user?.userHp
+
+        startActivity<MainActivity>()
         startActivity<MainActivity>()
 
     }

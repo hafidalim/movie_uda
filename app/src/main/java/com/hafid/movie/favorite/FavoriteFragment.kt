@@ -8,11 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.hafid.movie.R
+import com.hafid.movie.movie.adapter.MovieAdapter
+import com.hafid.movie.movie.data.ResultsItem
+import com.hafid.movie.movie.presenter.MoviePresenter
+import com.hafid.movie.movie.presenter.MovieView
 
 /**
  * A simple [Fragment] subclass.
  */
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : Fragment(){
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,7 +26,10 @@ class FavoriteFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_favorite, container, false)
+
+
     }
 
 
 }
+

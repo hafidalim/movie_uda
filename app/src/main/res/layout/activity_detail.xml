@@ -64,6 +64,7 @@
                 app:layout_constraintStart_toEndOf="@+id/img_poster"
                 app:layout_constraintTop_toBottomOf="@+id/img_banner"
                 tools:text="Toy Story 4" />
+            
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/movie_toolbar"

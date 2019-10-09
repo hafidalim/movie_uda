@@ -1,52 +1,87 @@
 package com.hafid.movie.movie.data
 
 
+import android.content.ContentValues
+import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
+@Entity(tableName = "favorite_movie")
+class ResultsItem(
 
-class ResultsItem : Serializable{
+	@PrimaryKey(autoGenerate = false)
+	@ColumnInfo(name = "id")
+	var id: Int? = null,
 
-	@field:SerializedName("overview")
-	val overview: String? = null
+	@ColumnInfo(name = "original_title")
+	@SerializedName("original_title")
+	var originalTitle: String? = null,
 
-	@field:SerializedName("original_language")
-	val originalLanguage: String? = null
+	@ColumnInfo(name = "overview")
+	var overview: String? = null,
 
-	@field:SerializedName("original_title")
-	val originalTitle: String? = null
+	@ColumnInfo(name = "vote_average")
+	@SerializedName("vote_average")
+	var voteAverage: Float = 0f,
 
-	@field:SerializedName("video")
-	val video: Boolean? = null
+	@ColumnInfo(name = "poster_path")
+	@SerializedName("poster_path")
+	var posterPath: String? = null,
 
-	@field:SerializedName("title")
-	val title: String? = null
+	@ColumnInfo(name = "backdrop_path")
+	@SerializedName("backdrop_path")
+	var backdropPath: String? = null,
 
-	@field:SerializedName("genre_ids")
-	val genreIds: List<Int?>? = null
+	@ColumnInfo(name = "release_date")
+	@SerializedName("release_date")
+	var releaseDate: String? = null
 
-	@field:SerializedName("poster_path")
-	val posterPath: String? = null
+) : Parcelable {
+	constructor(source: Parcel) : this(
+		source.readValue(Int::class.java.classLoader) as Int?,
+		source.readString(),
+		source.readString(),
+		source.readFloat(),
+		source.readString(),
+		source.readString(),
+		source.readString()
+	)
 
-	@field:SerializedName("backdrop_path")
-	val backdropPath: String? = null
+	override fun describeContents() = 0
 
-	@field:SerializedName("release_date")
-	val releaseDate: String? = null
+	override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
+		writeValue(id)
+		writeString(originalTitle)
+		writeString(overview)
+		writeFloat(voteAverage)
+		writeString(posterPath)
+		writeString(backdropPath)
+		writeString(releaseDate)
+	}
 
-	@field:SerializedName("popularity")
-	val popularity: Double? = null
+	companion object {
+		@JvmField
+		val CREATOR: Parcelable.Creator<com.hafid.movie.movie.data.ResultsItem> = object : Parcelable.Creator<com.hafid.movie.movie.data.ResultsItem> {
+			override fun createFromParcel(source: Parcel): com.hafid.movie.movie.data.ResultsItem =
+				ResultsItem(source)
+			override fun newArray(size: Int): Array<com.hafid.movie.movie.data.ResultsItem?> = arrayOfNulls(size)
+		}
 
-	@field:SerializedName("vote_average")
-	val voteAverage: Double? = null
-
-	@field:SerializedName("id")
-	val id: Int? = null
-
-	@field:SerializedName("adult")
-	val adult: Boolean? = null
-
-	@field:SerializedName("vote_count")
-	val voteCount: Int? = null
+		fun fromContentValues(values: ContentValues?): com.hafid.movie.movie.data.ResultsItem {
+			return ResultsItem(
+				values?.getAsInteger("id"),
+				values?.getAsString("original_title"),
+				values?.getAsString("overview"),
+				values!!.getAsFloat("vote_average"),
+				values.getAsString("poster_path"),
+				values.getAsString("backdrop_path"),
+				values.getAsString("release_date")
+			)
+		}
+	}
 }
+

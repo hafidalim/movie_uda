@@ -16,4 +16,5 @@
     <string name="runtime">Runtime</string>
     <string name="productions">Production</string>
     <string name="episode">Episode</string>
+    <string name="menu_favorites">favorite</string>
 </resources>

@@ -41,6 +41,7 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
             val password  = registerPassword.text.toString()
 
             presenter.register(nama, email, hp, password)
+            
 
         }
         linkLogin.onClick {
