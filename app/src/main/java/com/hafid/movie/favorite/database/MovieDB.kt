@@ -1,13 +1,11 @@
 package com.hafid.movie.favorite.database
 
-import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
-
+import android.content.Context
 import androidx.room.RoomDatabase
 
 import com.hafid.movie.movie.data.ResultsItem
-import com.hafid.movie.movie.presenter.OptionsFavoriteView
 
 @Database(entities = [ResultsItem::class], version = 1, exportSchema = false)
 abstract class MovieDB : RoomDatabase(){
@@ -18,7 +16,7 @@ abstract class MovieDB : RoomDatabase(){
         private var dbIntance : MovieDB? = null
 
 
-        fun getDatabase(context: Context): MovieDB{
+        fun getDatabase(context : Context): MovieDB{
             if (dbIntance == null){
                 dbIntance = Room
                     .databaseBuilder(context.applicationContext, MovieDB::class.java, DB_NAME)

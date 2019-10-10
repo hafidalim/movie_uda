@@ -4,9 +4,6 @@ import android.content.Context
 import com.hafid.movie.favorite.database.MovieDB
 
 import com.hafid.movie.movie.data.ResultsItem
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MovieDetailPresenter(var context: Context) {
     private val db = MovieDB.getDatabase(context)

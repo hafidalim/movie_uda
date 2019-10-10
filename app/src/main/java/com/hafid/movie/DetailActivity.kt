@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.activity_detail.img_poster
 import kotlinx.android.synthetic.main.content_detail_layout.*
 import kotlinx.android.synthetic.main.item_movie.*
+import org.jetbrains.anko.toast
 
 class DetailActivity : AppCompatActivity(), OptionsFavoriteView {
     override fun loadMovie(data: List<ResultsItem>) {
@@ -33,6 +34,8 @@ class DetailActivity : AppCompatActivity(), OptionsFavoriteView {
     override fun onFavorited() {
         favorite()
         Log.d("Berhasil","disimpan")
+        toast("Berhasil disimpan").show()
+
 
 
     }
@@ -41,6 +44,7 @@ class DetailActivity : AppCompatActivity(), OptionsFavoriteView {
         favorite()
         Log.d("Berhasil", "dihapus")
         progress_bar.visibility = View.GONE
+        toast("Berhasil dihapus").show()
     }
 
 
